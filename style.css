@@ -1,0 +1,17 @@
+.page-container {
+ height: 100vh; 
+}
+
+.grid-wrap {
+    display: flex;
+    height: 480px;
+    width: 480px;
+    flex-wrap: wrap;
+    border: 1px solid red;
+}
+
+.item {
+    height: 28px;
+    width: 28px;
+    border: 1px solid blue;
+}
