@@ -11,5 +11,12 @@ function makeGrid(sqrs){
 //grid generator call
 makeGrid(256); 
 
+//drawing event
+let items = document.querySelectorAll('.item');
+items.forEach(item =>{
+    item.addEventListener('mouseover', ()=>{
+        item.style.cssText = 'background-color: yellow';
+    });
+});
 
 
