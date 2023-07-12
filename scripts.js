@@ -24,17 +24,17 @@ buttons.forEach(button => {
             makeGrid(32 * 32);
         }if(btnId === 'grid64'){
             makeGrid(64 * 64);
-        }if(btnId === 'grid72'){
-            makeGrid(72 * 72);
         }if(btnId === 'grid80'){
             makeGrid(80 * 80);
+        }if(btnId === 'grid100'){
+            makeGrid(100 * 100);
         }
 
         //drawing event
         const items = document.querySelectorAll('.item');
         items.forEach(item => {
-            item.addEventListener('mouseover', () => {
-     //item.style.cssText = 'background-color: orangered'; -> turn on!!
+            item.addEventListener('mousemove', () => {
+            item.style.cssText = 'background-color: orangered';
             });
         });
     });//end event listener

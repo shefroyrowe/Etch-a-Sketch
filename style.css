@@ -12,11 +12,15 @@
 }
 
 .item {
-    height: 28px;
-    width: 28px;
-    border: 1px solid blue;
+    height: 2.8px;
+    width: 2.8px;
+    border: 1px solid lightgray;
 }
 
 /*
-    16grid/ .item
+    16grid/ .item > height: 28px; width: 28px;
+    32grid/ .item > height: 13px; width: 13px;
+    64grd/ .item > height: 5.5px; width: 5.5px;
+    80grid/ .item > height: 4px; width: 4px;
+    100grid/ .item > 
 */
