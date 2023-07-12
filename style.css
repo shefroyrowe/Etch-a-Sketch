@@ -3,6 +3,7 @@
 }
 
 .grid-wrap {
+    /*overflow: hidden;*/
     display: flex;
     height: 480px;
     width: 480px;
@@ -15,3 +16,7 @@
     width: 28px;
     border: 1px solid blue;
 }
+
+/*
+    16grid/ .item
+*/
