@@ -10,16 +10,30 @@ function makeGrid(sqrs) {
     }
 }
 
-//makeGrid(16*16); testing makeGrid
-
-//makeGrid and drawing event
+//buttons click event 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         let btnId = e.target.id;
 
+//reference grid items
+        const wrapper = document.querySelector('.grid-wrap');
+        const items = document.querySelectorAll('.item');
+
+//remove grid function
+function removeGrid(){
+        while (wrapper.firstChild) {
+        wrapper.firstChild.remove()
+      }
+    }
+//call to remove grid
+    if(btnId !== ''){
+    removeGrid();
+    }
+
+//change grid layout
         if (btnId === 'grid16') {
-            makeGrid(16 * 16)
+            makeGrid(16 * 16);
         }if(btnId === 'grid32'){
             makeGrid(32 * 32);
         }if(btnId === 'grid64'){
@@ -30,15 +44,14 @@ buttons.forEach(button => {
             makeGrid(100 * 100);
         }
 
-        //drawing event
-        const items = document.querySelectorAll('.item');
+//drawing event
         items.forEach(item => {
             item.addEventListener('mousemove', () => {
             item.style.cssText = 'background-color: orangered';
             });
         });
     });//end event listener
-});//end for each
+});//end for...Each
 
 
 
