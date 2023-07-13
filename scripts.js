@@ -87,7 +87,7 @@ buttons.forEach(button => {
                 });
                 item.addEventListener('mouseenter', () => {
                     if(mouseDown){
-                      item.style.backgroundColor = 'blue';
+                      item.style.background = 'blue';
                     }
                 });
             });//end for...each
