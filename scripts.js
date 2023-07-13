@@ -1,4 +1,4 @@
-//grid generator
+//generator grid cells
 function makeGrid(sqrs) {
     let i = 0;
     while (i < sqrs) {
@@ -8,24 +8,26 @@ function makeGrid(sqrs) {
         wrapper.appendChild(cell);
         i++;
     }
-}
+}//...
 
-//buttons click event 
+//get layout selecting buttons
 const buttons = document.querySelectorAll('button');
+
+//begin canvas control logic 
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         let btnId = e.target.id;
 
-        //reference grid items
+        //get grid cells
         const wrapper = document.querySelector('.grid-wrap');
-
-        //remove grid function
+        
+        //remove grid cells function
         function removeGrid() {
             while (wrapper.firstChild) {
                 wrapper.firstChild.remove()
             }
         }
-        //call to remove grid
+        //call to remove grid function
         if (btnId !== '') {
             removeGrid();
         }
@@ -45,10 +47,12 @@ buttons.forEach(button => {
         }
         if (btnId === 'grid100') {
             makeGrid(100 * 100);
-        }
+        }//...
 
-        //add css to normalize grid squares 
+        //get grid cells
         const boxes = document.querySelectorAll('.item');
+
+        //css logic to normalize grid cell size
         boxes.forEach(box => {
             if (btnId === 'grid16') {
                 box.style.cssText = 'height: 28px; width: 28px;';
@@ -65,19 +69,32 @@ buttons.forEach(button => {
             if (btnId === 'grid100') {
                 box.style.cssText = 'height: 2.8px; width: 2.8px;';
             }
-        });
+        });//...
 
-        //drawing event
+        //get grid cells
         const items = document.querySelectorAll('.item');
 
-        items.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                    item.style.backgroundColor = 'blue';
-            });//end drawing event listener
-        });//end drawing for...each
+        //keydown and drag > logic to draw on canvas
+        let mouseDown = false;
 
-    });//end buttons event 
-});//end bttons for...each
+            //begin for...each
+            items.forEach(item => {
+                addEventListener('mousedown', ()=>{
+                    mouseDown = true;
+                });
+                addEventListener('mouseup', ()=>{
+                    mouseDown = false;
+                });
+                item.addEventListener('mouseenter', () => {
+                    if(mouseDown){
+                      item.style.backgroundColor = 'blue';
+                    }
+                });
+            });//end for...each
+        //...
+
+    });//end canvas control for...each
+});//end canvas control logic 
 
 //>>>features to add<<<//
 //=======================//
