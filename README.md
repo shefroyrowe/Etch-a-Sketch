@@ -1,2 +1,5 @@
 # Etch-a-Sketch
-Etch a sketch game 
+
+Etch a sketch webapp
+
+**still in development**

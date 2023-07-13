@@ -1,5 +1,5 @@
 .page-container {
- height: 100vh; 
+    height: 100vh;
 }
 
 .grid-wrap {
@@ -18,6 +18,8 @@
 }
 
 /*
+important! => add box shadows to make elements pop
+
     16grid/ .item > height: 28px; width: 28px;
     32grid/ .item > height: 13px; width: 13px;
     64grd/ .item > height: 5.5px; width: 5.5px;
