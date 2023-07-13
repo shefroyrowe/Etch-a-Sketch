@@ -18,7 +18,6 @@ buttons.forEach(button => {
 
 //reference grid items
         const wrapper = document.querySelector('.grid-wrap');
-        const items = document.querySelectorAll('.item');
 
 //remove grid function
 function removeGrid(){
@@ -45,6 +44,7 @@ function removeGrid(){
         }
 
 //drawing event
+        const items = document.querySelectorAll('.item');
         items.forEach(item => {
             item.addEventListener('mousemove', () => {
             item.style.cssText = 'background-color: orangered';
