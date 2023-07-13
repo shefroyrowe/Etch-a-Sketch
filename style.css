@@ -12,8 +12,8 @@
 }
 
 .item {
-    height: 2.8px;
-    width: 2.8px;
+    height: 0;
+    width: 0;
     border: 1px solid lightgray;
 }
 
