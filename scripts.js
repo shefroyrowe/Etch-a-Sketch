@@ -96,15 +96,18 @@ buttons.forEach(button => {
     });//end canvas control for...each
 });//end canvas control logic 
 
+//=======================//
 //>>>features to add<<<//
 //=======================//
+
 //add eraser function
 //add randomized color option
 //add color picker
 //add method to clear entire grid without removing cells
 //method to remove grid lines
 //method to gradually increase color opacity
-//method to click and drag to draw
+
+//[method to click and drag to draw (complete)]...
 
 
 
