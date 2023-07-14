@@ -11,20 +11,28 @@
 
 <body>
 
-    <div class="page-container">
-        <!--grid range buttons-->
-        <span class="btn">
-            <button id="grid16">16 x 16</button>
-            <button id="grid32">32 x 32</button>
-            <button id="grid64">64 x 64</button>
-            <button id="grid80">80 x 80</button>
-            <button id="grid100">100 x 100</button>
-        </span>
+    <!--grid cell selection buttons-->
+    <span class="btn">
+        <button id="grid16" class="controls">16 x 16</button>
+        <button id="grid32" class="controls">32 x 32</button>
+        <button id="grid64" class="controls">64 x 64</button>
+        <button id="grid80" class="controls">80 x 80</button>
+        <button id="grid100" class="controls">100 x 100</button>
+    </span>
 
-        <!--grid container-->
-        <div class="grid-wrap"></div>
+    <!--grid cells container-->
+    <div class="grid-wrap"></div>
 
-        <script src="scripts.js"></script>
+    <!--options buttons-->
+    <div class="options">
+        <button id="eraser">ERASER</button>
+        <button id="rainbow">RAINBOW</button>
+        <button id="pick">COLOR</button>
+        <button id="clear-lines">NO LINES</button>
+        <button id="shade">SHADE</button>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>
