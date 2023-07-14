@@ -21,18 +21,19 @@ buttons.forEach(button => {
         //get grid cell container
         const wrapper = document.querySelector('.grid-wrap');
 
-        //remove grid cells > 1/2 parts
+        //remove grid cells
         function removeGrid() {
             while (wrapper.firstChild) {
                 wrapper.firstChild.remove()
             }
-        }
-        //call to remove grid cells 2/2 parts
+        }//...
+        //call to remove grid cells
         if (btnId !== '') {
             removeGrid();
-        }
+        }//...
 
-        //change grid layout
+
+        //change grid layout logic
         if (btnId === 'grid16') {
             makeGrid(16 * 16);
         }
@@ -52,7 +53,6 @@ buttons.forEach(button => {
 
         //get grid cells for css appending
         const boxes = document.querySelectorAll('.item');
-
         //append css to normalize grid cell sizes
         boxes.forEach(box => {
             if (btnId === 'grid16') {
@@ -72,7 +72,8 @@ buttons.forEach(button => {
             }
         });//...
 
-        //generate random background color
+
+        //generate random color
         function randomColor() {
             var letters = '0123456789ABCDEF'.split('');
             var color = '#';
@@ -82,20 +83,31 @@ buttons.forEach(button => {
             return color;
         }//...
 
-        //get rainbow toggle button
+        //get raandom color toggle button
         const rainbow = document.querySelector('#rainbow');
+
+
+        //get color picker element
+        let pickColor = document.querySelector('#color-pick');
+
 
         //get grid cells to apply canvas coloring
         const items = document.querySelectorAll('.item');
-
         //keydown and drag > logic to draw on canvas
-        //begin for...each
         items.forEach(item => {
+            //random color event listener for each item
             let rainbow_On = false;
             rainbow.addEventListener('click', () => {
                 rainbow_On = true;
             });
 
+            //color picker event listener for each item
+            let newcolor;
+            pickColor.addEventListener('change', (e) => {
+                newcolor = e.target.value;
+            });
+
+            //mouse down event switch to control drawing logic
             let mouseDown = false;
             addEventListener('mousedown', () => {
                 mouseDown = true;
@@ -104,23 +116,24 @@ buttons.forEach(button => {
                 mouseDown = false;
             });
 
-            //background color event listener
+            //background coloring event listener for each item
             item.addEventListener('mouseenter', () => {
-
                 //default color
-                if(mouseDown){
-                item.style.background = 'salmon';
-                }
+                if (mouseDown) {
+                    item.style.background = newcolor;
+                }//...
 
-                //while rainbow_On is true and mousedown is also true
-                //canvas color mode = random/rainbow color effect
+                //rainbow color scheme
+                /*
+                while rainbow_On is true and mousedown is also true
+                canvas color mode = random/rainbow color effect
+                */
                 if (rainbow_On === true && mouseDown === true) {
                     item.style.background = randomColor();
-                }
+                }//...
             });
-        });//end for...each
-        //...
-    });//end canvas control for...each
+        });//end drawing for...each logic
+    });
 });//end canvas control logic 
 
 
@@ -129,11 +142,10 @@ buttons.forEach(button => {
 //=======================//
 
 //add eraser function
-//add color picker...
-//method to remove grid lines
+//add tab icon to index page
 //method to gradually increase color opacity from light to fully dark
-//feature to save drawing
 
+//[add color picker(complete)]...
 //[method to click and drag to draw (complete)]...
 //[add randomized color option (complete)]...
 
