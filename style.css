@@ -18,6 +18,14 @@
     border: 1px solid lightgray;
 }
 
+.grid-wrap-text {
+    display: block;
+    margin-top: 220px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 /*
 important! => add box shadows to make elements pop
 

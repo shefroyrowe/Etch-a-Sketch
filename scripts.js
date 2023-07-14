@@ -123,19 +123,19 @@ buttons.forEach(button => {
     });//end canvas control for...each
 });//end canvas control logic 
 
+
 //=======================//
 //>>>features to add<<<//
 //=======================//
 
 //add eraser function
-
-//[add randomized color option (complete)]...
-
-//add color picker
+//add color picker...
 //method to remove grid lines
 //method to gradually increase color opacity from light to fully dark
+//feature to save drawing
 
 //[method to click and drag to draw (complete)]...
+//[add randomized color option (complete)]...
 
 
 
