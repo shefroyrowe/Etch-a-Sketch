@@ -75,8 +75,8 @@ buttons.forEach(button => {
 
         //generate random color
         function randomColor() {
-            var letters = '0123456789ABCDEF'.split('');
-            var color = '#';
+            let letters = '0123456789ABCDEF'.split('');
+            let color = '#';
             for (var i = 0; i < 6; i++) {
                 color += letters[Math.round(Math.random() * 15)];
             }
@@ -88,14 +88,18 @@ buttons.forEach(button => {
 
 
         //get color picker element 
-        let pickColor = document.querySelector('#color-pick');
+        const pickColor = document.querySelector('#color-pick');
 
-        
+
         //get fade to black toggle button
-        let fadeToBlack = document.querySelector('#shade');
-        
-          
-        //get grid cells to apply canvas coloring
+        const fadeToBlack = document.querySelector('#shade');
+
+
+        //get eraser toggle button
+        const eraser = document.querySelector('#eraser');
+
+
+        //get all grid cell elements
         const items = document.querySelectorAll('.item');
 
 
@@ -110,16 +114,24 @@ buttons.forEach(button => {
 
             //activate color picker mode on change of color palette
             let newcolor;
+            let color_On = false;
             pickColor.addEventListener('change', (e) => {
                 newcolor = e.target.value;
+                color_On = true;
             });
 
-             //activate shade until black color mode on click
-             let fade = false;
-             fadeToBlack.addEventListener('click', ()=>{
-                fade = true;          
+            //activate eraser
+            let erase = false;
+            eraser.addEventListener('click', ()=>{
+                erase = true;
+            });
 
-             });
+            //activate fade until black color mode on click
+            let fade = false;
+            fadeToBlack.addEventListener('click', () => {
+                fade = true;
+
+            });
 
             //mouse down event switch to control coloring logic
             let mouseDown = false;
@@ -132,39 +144,47 @@ buttons.forEach(button => {
 
             //coloring modes event listener 
             item.addEventListener('mouseenter', () => {
-                
+                //color eraser mode
+                if(erase === true && mouseDown === true){
+                    item.style.backgroundColor = 'white';
+                    item.style.opacity= (parseFloat(item.style.opacity) || 1.0) + 1.0;
+                    //stop other color options//
+                    color_On = false;
+                    fade = false;
+                    rainbow_On = false;
+                }
+
                 //(default) color picker color mode
-                if (mouseDown) {
-                    item.style.background = newcolor;
+                if (color_On === true && mouseDown === true) {
+                    item.style.backgroundColor = newcolor;
+                    item.style.opacity= (parseFloat(item.style.opacity) || 1.0) + 1.0;
+                    //stop other color options//
+                    erase = false;
+                    fade = false;
+                    rainbow_On = false;
                 }//...
 
                 //shade grid items from light until black color mode
-                if(fade === true && mouseDown === true){ 
-                    item.style.background = "black";
+              if (fade === true && mouseDown === true) {
+                    item.style.backgroundColor = "black";
                     item.style.opacity = (parseFloat(item.style.opacity) || 0) + 0.2;
-                    } 
+                    //stop other color options//
+                    erase = false;
+                    color_On = false;
+                    rainbow_On = false;
+                }
 
                 //(randomized color) rainbow color mode
-                /*
-                while rainbow_On is true and mousedown is also true
-                canvas color mode = random/rainbow color effect
-                */
-                if (rainbow_On === true && mouseDown === true) {
-                    item.style.background = randomColor();
+               if (rainbow_On === true && mouseDown === true) {
+                    item.style.backgroundColor = randomColor();
+                    item.style.opacity= (parseFloat(item.style.opacity) || 1.0) + 1.0;                  
+                    //stop other color options//
+                    erase = false;
+                    color_On = false;
+                    fade = false;
                 }//...
+
             });//end coloring modes event  listener
         });//end drawing for...each logic
     });//end for each [button] event listener 
 });//end canvas control logic 
-
-
-//=======================//
-//>>>features to add<<<//
-//=======================//
-
-//add eraser function
-
-
-
-
-

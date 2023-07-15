@@ -15,7 +15,7 @@
     height: 0;
     width: 0;
     transition: background 1s;/*cell color fades in with a trail*/
-    border: 1px solid lightgray;
+    border: 1px solid #fff;
 }
 
 .grid-wrap-text {
