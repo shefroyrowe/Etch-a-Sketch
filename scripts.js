@@ -83,31 +83,45 @@ buttons.forEach(button => {
             return color;
         }//...
 
-        //get raandom color toggle button
+        //get random color toggle button
         const rainbow = document.querySelector('#rainbow');
 
 
-        //get color picker element
+        //get color picker element 
         let pickColor = document.querySelector('#color-pick');
 
-
+        
+        //get fade to black toggle button
+        let fadeToBlack = document.querySelector('#shade');
+        
+          
         //get grid cells to apply canvas coloring
         const items = document.querySelectorAll('.item');
+
+
         //keydown and drag > logic to draw on canvas
         items.forEach(item => {
-            //random color event listener for each item
+
+            //activate (random color) rainbow color mode on click
             let rainbow_On = false;
             rainbow.addEventListener('click', () => {
                 rainbow_On = true;
             });
 
-            //color picker event listener for each item
+            //activate color picker mode on change of color palette
             let newcolor;
             pickColor.addEventListener('change', (e) => {
                 newcolor = e.target.value;
             });
 
-            //mouse down event switch to control drawing logic
+             //activate shade until black color mode on click
+             let fade = false;
+             fadeToBlack.addEventListener('click', ()=>{
+                fade = true;          
+
+             });
+
+            //mouse down event switch to control coloring logic
             let mouseDown = false;
             addEventListener('mousedown', () => {
                 mouseDown = true;
@@ -116,14 +130,21 @@ buttons.forEach(button => {
                 mouseDown = false;
             });
 
-            //background coloring event listener for each item
+            //coloring modes event listener 
             item.addEventListener('mouseenter', () => {
-                //default color
+                
+                //(default) color picker color mode
                 if (mouseDown) {
                     item.style.background = newcolor;
                 }//...
 
-                //rainbow color scheme
+                //shade grid items from light until black color mode
+                if(fade === true && mouseDown === true){ 
+                    item.style.background = "black";
+                    item.style.opacity = (parseFloat(item.style.opacity) || 0) + 0.2;
+                    } 
+
+                //(randomized color) rainbow color mode
                 /*
                 while rainbow_On is true and mousedown is also true
                 canvas color mode = random/rainbow color effect
@@ -131,9 +152,9 @@ buttons.forEach(button => {
                 if (rainbow_On === true && mouseDown === true) {
                     item.style.background = randomColor();
                 }//...
-            });
+            });//end coloring modes event  listener
         });//end drawing for...each logic
-    });
+    });//end for each [button] event listener 
 });//end canvas control logic 
 
 
@@ -142,12 +163,7 @@ buttons.forEach(button => {
 //=======================//
 
 //add eraser function
-//add tab icon to index page
-//method to gradually increase color opacity from light to fully dark
 
-//[add color picker(complete)]...
-//[method to click and drag to draw (complete)]...
-//[add randomized color option (complete)]...
 
 
 
