@@ -2,7 +2,6 @@ html,
 body {
     height: 100%;
     width: 100%;
-    min-width: 665px;
     color: #3d6098;
     background-color: #e7e7e7;
     margin: 0;
@@ -18,7 +17,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100%;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
 }
 
 h1 {
@@ -39,7 +40,7 @@ aside {
     display: flex;
     flex-direction: column;
 }
-
+/*side buttons*/
 .options > button {
     font-weight: 400;
     color: #213159;
@@ -57,7 +58,7 @@ aside {
 /*page top buttons (grid selectors)*/
 .btn {
     margin-left: -1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #3d6098;
 }
 
@@ -80,8 +81,8 @@ aside {
     color: #fff;
     background-color: #f04b4c;
     transform: scale(1,1.2);
-    animation-timing-function: ease-in-out;
-    transition: 0.5s linear;
+    animation-timing-function: linear;
+    transition: 0.5s;
 }
 
 .grid-wrap {
@@ -91,6 +92,7 @@ aside {
     overflow: hidden;
     height: 480px;
     width: 480px;
+    margin-bottom: 1.2rem;
     border: 1px solid #646161;
     box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.65);
     -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.65);
@@ -111,7 +113,6 @@ aside {
     height: 0;
     width: 0;
     /*cell color fades in with a trail due to 1s delay*/
-    transition: background 1s;
     border: 1px solid #fff;
 }
 
