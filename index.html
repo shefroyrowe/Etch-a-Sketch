@@ -4,14 +4,30 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Etch A Sketch</title>
+    <title>Etch-A-Sketch</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 <main class="page-container">
-    <!--grid cell selection buttons-->
+
+    <!--options buttons-->
+    <aside class="options">
+        <button id="eraser">ERASER</button>
+        <button id="rainbow">RAINBOW</button>
+        <button id="shade">FADE TO BLACK</button>
+     <!--pick color-->
+        <label for="color">COLOR
+            <input type="color" id="color-pick" value="#f04b4c">
+        </label>
+    </aside>
+
+    <section class="content">
+        <h1>ETCH A SKETCH</h1>
+
+        <!--grid cell selection buttons-->
     <span class="btn">
         <button id="grid16" class="controls">16 x 16</button>
         <button id="grid32" class="controls">32 x 32</button>
@@ -21,22 +37,9 @@
     </span>
 
     <!--grid cells container-->
-    <div class="grid-wrap">
-        <p class="grid-wrap-text">CHOOSE GRID LAYOUT</p>
-    </div>
-
-    <!--options buttons-->
-    <div class="options">
-        <button id="eraser">ERASER</button>
-        <button id="rainbow">RAINBOW</button>
-        <button id="shade">FADE TO BLACK</button>
-     <!--pick color-->
-        <label for="color">COLOR
-            <input type="color" id="color-pick" value="#ffA500">
-        </label>
-       
-    </div>
-
+    <div class="grid-wrap"><p class="grid-wrap-text">CHOOSE GRID LAYOUT</p></div>
+    </section>
+    <footer>&copy; shefroyrowe | 2023 | the-odin-project</footer>
     <script src="scripts.js"></script>
 </main>
 </body>
