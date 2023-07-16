@@ -1,3 +1,3 @@
 # Etch-a-Sketch
 
-Etch a sketch web app / needs tweaking
+Etch a sketch web app
