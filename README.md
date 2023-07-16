@@ -1,5 +1,3 @@
 # Etch-a-Sketch
 
-Etch a sketch webapp
-
-**still in development**
+Etch a sketch web app
