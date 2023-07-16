@@ -28,9 +28,9 @@ buttons.forEach(button => {
             }
         }//...
         //call to remove grid cells
-        if (btnId !== '') {
+        //if (btnId !== '') {
             removeGrid();
-        }//...
+        //}//...
 
 
         //change grid layout logic
@@ -43,11 +43,11 @@ buttons.forEach(button => {
         if (btnId === 'grid64') {
             makeGrid(64 * 64);
         }
-        if (btnId === 'grid80') {
-            makeGrid(80 * 80);
+        if (btnId === 'grid4') {
+            makeGrid(4 * 4);
         }
-        if (btnId === 'grid100') {
-            makeGrid(100 * 100);
+        if (btnId === 'grid8') {
+            makeGrid(8 * 8);
         }//...
 
 
@@ -64,11 +64,11 @@ buttons.forEach(button => {
             if (btnId === 'grid64') {
                 box.style.cssText = 'height: 5.5px; width: 5.5px;';
             }
-            if (btnId === 'grid80') {
-                box.style.cssText = 'height: 4px; width: 4px;';
+            if (btnId === 'grid4') {
+                box.style.cssText = 'height: 6.7rem; width: 6.7rem;';
             }
-            if (btnId === 'grid100') {
-                box.style.cssText = 'height: 2.8px; width: 2.8px;';
+            if (btnId === 'grid8') {
+                box.style.cssText = 'height: 3.293rem; width: 3.293rem;';
             }
         });//...
 
@@ -146,7 +146,7 @@ buttons.forEach(button => {
             item.addEventListener('mouseenter', () => {
                 //color eraser mode
                 if(erase === true && mouseDown === true){
-                    item.style.backgroundColor = 'white';
+                    item.style.backgroundColor ='white';
                     item.style.opacity= (parseFloat(item.style.opacity) || 1.0) + 1.0;
                     //stop other color options//
                     color_On = false;

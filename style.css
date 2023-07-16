@@ -19,6 +19,7 @@ body {
     align-items: center;
     min-height: 100vh;
     width: 100vw;
+    min-width: 665px;
     overflow-y: scroll;
 }
 
@@ -50,9 +51,6 @@ aside {
     width: 7rem;
     border-radius: 5px;
     border: 1px solid #3d6098;
-    box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.29);
-    -webkit-box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.29);
-    -moz-box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.29);
 }
 
 /*page top buttons (grid selectors)*/
@@ -71,18 +69,23 @@ aside {
     width: 4.5rem;
     border-radius: 5px;
     border: 1px solid #3d6098;
-    box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.29);
+}
+
+.controls,
+.options > button {
+     box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.29);
     -webkit-box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.29);
     -moz-box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.29);
+    
 }
 
 .controls:hover,
 .options > button:hover {
     color: #fff;
     background-color: #f04b4c;
-    transform: scale(1,1.2);
-    animation-timing-function: linear;
-    transition: 0.5s;
+    transform: scale(1,1.1);
+    animation-timing-function: ease-in-out;
+    transition: 0.3s;
 }
 
 .grid-wrap {
@@ -113,7 +116,7 @@ aside {
     height: 0;
     width: 0;
     /*cell color fades in with a trail due to 1s delay*/
-    border: 1px solid #fff;
+    border: 1px solid #f04b4c;
 }
 
 footer {
@@ -132,7 +135,7 @@ footer {
     16grid/ .item > height: 28px; width: 28px;
     32grid/ .item > height: 13px; width: 13px;
     64grd/ .item > height: 5.5px; width: 5.5px;
-    80grid/ .item > height: 4px; width: 4px;
-    100grid/ .item > height: 2.8px; width: 2.8px;
+    4grid/ .item > height: 6.7rem; width: 6.7rem;
+    8grid/ .item > height: 3.293rem; width: 3.293rem;
 
 */
