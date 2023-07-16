@@ -159,9 +159,9 @@ buttons.forEach(button => {
                     item.style.backgroundColor = newcolor;
                     item.style.opacity= (parseFloat(item.style.opacity) || 1.0) + 1.0;
                     //stop other color options//
-                    erase = false;
-                    fade = false;
-                    rainbow_On = false;
+                    //erase = false;
+                    //fade = false;
+                    //rainbow_On = false;
                 }//...
 
                 //shade grid items from light until black color mode
@@ -169,9 +169,9 @@ buttons.forEach(button => {
                     item.style.backgroundColor = "black";
                     item.style.opacity = (parseFloat(item.style.opacity) || 0) + 0.2;
                     //stop other color options//
-                    erase = false;
-                    color_On = false;
-                    rainbow_On = false;
+                    //erase = false;
+                    //color_On = false;
+                    //rainbow_On = false;
                 }
 
                 //(randomized color) rainbow color mode
@@ -179,9 +179,9 @@ buttons.forEach(button => {
                     item.style.backgroundColor = randomColor();
                     item.style.opacity= (parseFloat(item.style.opacity) || 1.0) + 1.0;                  
                     //stop other color options//
-                    erase = false;
-                    color_On = false;
-                    fade = false;
+                    //erase = false;
+                    //color_On = false;
+                    //fade = false;
                 }//...
 
             });//end coloring modes event  listener

@@ -117,6 +117,7 @@ aside {
     width: 0;
     /*cell color fades in with a trail due to 1s delay*/
     border: 1px solid #f04b4c;
+    transition: 1s;
 }
 
 footer {
